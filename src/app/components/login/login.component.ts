@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule], // <- agrega FormsModule aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -21,7 +21,7 @@ export class LoginComponent {
   async onSubmit(): Promise<void> {
     const success = await this.authService.login(this.username, this.password);
     if (success) {
-      this.router.navigate(['/home']);  // Redirigir a la página de inicio
+      this.router.navigate(['/home']); 
     } else {
       this.errorMessage = 'Credenciales inválidas. Intenta de nuevo.';
     }
